@@ -1,0 +1,7 @@
+version: 1.0
+name: RiftGenerators
+main: me.hassan.riftgenerators.RiftGenerators
+commands:
+  riftGenerators:
+    
+ 

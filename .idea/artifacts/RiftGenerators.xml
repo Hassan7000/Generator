@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RiftGenerators">
+    <output-path>$PROJECT_DIR$/../../Plugins folder</output-path>
+    <root id="archive" name="RiftGenerators.jar">
+      <element id="module-output" name="RiftGenerators" />
+      <element id="file-copy" path="$PROJECT_DIR$/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,232 @@
+###################
+# Rift Generators
+# Made by Hassan7000
+###################
+
+PlaceGenerator: '&d&lPrefix &8>> &dYou have placed a forge.'
+BreakGenerator: '&d&lPrefix  &8>> &dYou have broken your forge.'
+GiveGenerator: '&d&lPrefix  &8>> &dYou have given {target} a &f{type}'
+GiveGeneratorTarget: '&d&lPrefix  &8>> &dYou have received a &f{type}'
+BoughtUpgrade: '&d&lPrefix  &8>> &dYou purchased an upgrade for &f{price}'
+ClaimRewards: '&d&lPrefix  &8>> &dYou have claimed your items'
+NotPartOfGenerator: '&d&lPrefix  &8>> &cYou are not accessed to this forge'
+OnlyYourIsland: '&d&lPrefix  &8>> &dYou can only place your forge on your island'
+NotHighEnoughRank: '&d&lPrefix  &8>> &cYou are not accessed to this forge'
+NoRewardsToClaim: '&d&lPrefix  &8>> &cYou dont have any rewards to claim'
+NotEnoughMoney: '&d&lPrefix  &8>> &cYou dont have enough money to buy this upgrade'
+AlreadyLastRank: '&d&lPrefix  &8>> &dYou have already at the max level'
+PlayerNotFound: '&d&lPrefix  &8>> &cPlayer not found'
+MemberAdded: '&d&lPrefix  &8>> &f{member} &dhas been accessed to your forge.'
+MemberRemoved: '&d&lPrefix  &8>> &dYou have removed &f{member}&d from this forge'
+Member-Message:
+- '&6Add/Remove a member to your forge'
+- '&eType the name you want to modify'
+- '&eTo cancel this action type &ccancel&e'
+ 
+Generator-Gui-Name: '&8&l➢ &5Generator Panel'
+Generator-Gui-Size: 27
+ 
+HologramOffset:
+ Y: 3.3
+ X: 0.5
+ Z: 0.47
+ 
+Generator-Items:
+ BMForge: #The name of the forge
+   Type: 'COMMAND'
+   Material: 'ENDER_PORTAL_FRAME'
+   Data: 0
+   Name: '&5&l&nBM&r &d&l&nForge'
+   Lore:
+   - ''
+   - '&7&lStats:'
+   - '&7- &fLevel: &d{level}'
+   - '&7- &fGenerate Rate: &d{seconds}s'
+   - ''
+   Glow: true
+   Reward: 'blackmarket add {player} {amount}'
+   Hologram:
+   - '&5&l&nBM &d&l&nForge'
+   - '&7&oLevel: &f{level}'
+   - ''
+   - '&f&lContains:' 
+   - '&a{rewards} Coins'
+   - ''
+   - '&f&lNext Drop:' 
+   - '&e{seconds}'
+ MoneyForge: #The name of the forge
+   Type: 'COMMAND'
+   Material: 'ENDER_PORTAL_FRAME'
+   Data: 0
+   Name: '&5&l&nCash&r &d&l&nForge'
+   Lore:
+   - ''
+   - '&7&lStats:'
+   - '&7- &fLevel: &d{level}'
+   - '&7- &fGenerate Rate: &d{seconds}s'
+   - ''
+   Glow: true
+   Reward: 'eco give {player} {amount}'
+   Hologram:
+   - '&5&l&nCash &d&l&nForge'
+   - '&7&oLevel: &f{level}'
+   - ''
+   - '&f&lContains:' 
+   - '&a${rewards}'
+   - ''
+   - '&f&lNext Drop:' 
+   - '&e{seconds}'
+
+Generator-Rewards:
+ BMForge: #Make sure this is the same name as in the forge-items section
+   1:
+     Seconds: 600
+     Reward: '20'
+     Price: 1500000
+   2:
+     Seconds: 480
+     Reward: '25'
+     Price: 3000000
+   3:
+     Seconds: 420
+     Reward: '30'
+     Price: 5500000
+   4:
+     Seconds: 390
+     Reward: '30' 
+     Price: 8000000
+   5:
+     Seconds: 360
+     Reward: '40' 
+     Price: 15000000
+   6:
+     Seconds: 330
+     Reward: '45' 
+     Price: 25000000
+   7:
+     Seconds: 300
+     Reward: '50' 
+     Price: 35000000
+   8:
+     Seconds: 300
+     Last-Level: true
+     Reward: '55' 
+     Price: 50000000
+ MoneyForge: #Make sure this is the same name as in the forge-items section
+   1:
+     Seconds: 600
+     Reward: '50000'
+     Price: 2500000
+   2:
+     Seconds: 480
+     Reward: '50000'
+     Price: 5000000
+   3:
+     Seconds: 420
+     Reward: '100000'
+     Price: 8000000
+   4:
+     Seconds: 390
+     Reward: '100000' 
+     Price: 10000000
+   5:
+     Seconds: 360
+     Reward: '250000' 
+     Price: 15000000
+   6:
+     Seconds: 330
+     Reward: '250000' 
+     Price: 30000000
+   7:
+     Seconds: 300
+     Reward: '350000' 
+     Price: 50000000
+   8:
+     Seconds: 300
+     Last-Level: true
+     Reward: '350000' 
+     Price: 80000000
+
+Generator-Gui:
+ BMForge:
+   1:
+     Action: 'UPGRADE_BUTTON'
+     Material: 'REDSTONE_COMPARATOR'
+     Name: '&6&lUpgrade your Forge'
+     Lore:
+     - '&dCurrent Level: &f&l{level}'
+     - '&dDrop Rate&7:&f {rate}s'
+     - '&dDrop Amount&7:&f {amt} Coins'
+     - ''
+     - '&dNext Level&7: &f&l{nextlevel}'
+     - '&dNew Rate&7:&f {newrate}s'
+     - '&dNew Amount&7:&f {newamt} Coins'
+     - ''
+     - '&fUpgrade Price&7: &d${price}'
+     Slot: 12
+   2:
+     Action: 'CLAIM_REWARDS'
+     Material: 'CHEST'
+     Name: '&a&lClaim Items'
+     Lore:
+     - '&dBM Coins&8: &f{amount}'
+     - ''
+     - '&7&o(TIP: Shift + Right Click to claim)'
+     Slot: 10
+   3:
+     Action: 'MEMBER_BUTTON'
+     Material: 'BEACON'
+     Name: '&b&lManage Your Forge'
+     Lore:
+     - '&dCurent Members&7:'
+     - '&d- &f{member}'
+     - ''
+     - '&7&o(Click to add members)'
+     Slot: 14
+   4:
+     Action: 'DESTORY_GENERATOR'
+     Material: 'BARRIER'
+     Name: '&c&lDelete your Forge'
+     Lore: ''
+     Slot: 16
+ MoneyForge:
+   1:
+     Action: 'UPGRADE_BUTTON'
+     Material: 'REDSTONE_COMPARATOR'
+     Name: '&6&lUpgrade your Forge'
+     Lore:
+     - '&dCurrent Level: &f&l{level}'
+     - '&dDrop Rate&7:&f {rate}s'
+     - '&dDrop Amount&7:&f {amt} Coins'
+     - ''
+     - '&dNext Level&7: &f&l{nextlevel}'
+     - '&dNew Rate&7:&f {newrate}s'
+     - '&dNew Amount&7:&f {newamt} Coins'
+     - ''
+     - '&fUpgrade Price&7: &d${price}'
+     Slot: 12
+   2:
+     Action: 'CLAIM_REWARDS'
+     Material: 'CHEST'
+     Name: '&a&lClaim Items'
+     Lore:
+     - '&dMoney&8: &f${amount}'
+     - ''
+     - '&7&o(TIP: Shift + Right Click to claim)'
+     Slot: 10
+   3:
+     Action: 'MEMBER_BUTTON'
+     Material: 'BEACON'
+     Name: '&b&lManage Your Forge'
+     Lore:
+     - '&dCurent Members&7:'
+     - '&d- &f{member}'
+     - ''
+     - '&7&o(Click to add members)'
+     Slot: 14
+   4:
+     Action: 'DESTORY_GENERATOR'
+     Material: 'BARRIER'
+     Name: '&c&lDelete your Forge'
+     Lore: ''
+     Slot: 16

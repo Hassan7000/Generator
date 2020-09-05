@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MultiPrinter">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Plugins folder/MultiPrinter.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
